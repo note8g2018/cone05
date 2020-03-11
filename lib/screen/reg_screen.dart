@@ -31,10 +31,12 @@ class _RegState extends State<Reg>
 
   void sendReg()
   {
-    String hashPassWord = ValidateDate.encryptString(_passWord2);
-    String hashUserName = ValidateDate.encryptString(_userName);
-    Person person = Person(userName: hashUserName, email: _email, passWord: hashPassWord);
-    RegServer.regToServer2(person);
+    Person person = Person(
+      userName: _userName,
+      passWord: _passWord2,
+      email: _email,
+    );
+    RegServer.regToServer2(person: person);
   }
 
   @override
